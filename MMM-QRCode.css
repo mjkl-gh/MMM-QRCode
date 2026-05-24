@@ -1,15 +1,24 @@
 .qrcode {
     line-height: 0;
 }
-    .qrcode__image {
-        margin-bottom: 5px;
-        display: inline-block;
-    }
 
-    .qrcode__text {
-        font-size: 16px;
-        font-weight: normal;
-        color: #aaa;
-        line-height: 1.5;
-        max-width: 400px;
-    }
+.qrcode__image {
+    margin-bottom: 5px;
+    display: inline-block;
+    background: #fff;
+    padding: 12px;
+}
+
+.qrcode__image canvas {
+    display: block;
+    background: #fff;
+}
+
+.qrcode__text {
+    font-size: 16px;
+    font-weight: normal;
+    color: #aaa;
+    line-height: 1.5;
+    max-width: 520px;
+    overflow-wrap: anywhere;
+}

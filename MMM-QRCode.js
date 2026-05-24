@@ -15,9 +15,9 @@ Module.register("MMM-QRCode", {
 		textUrl: null,
 		responseField: null,
 		updateInterval: 60000,
-		colorDark: "#fff",
-		colorLight: "#000",
-		imageSize: 150,
+		colorDark: "#000",
+		colorLight: "#fff",
+		imageSize: 220,
 		showRaw: true
 	},
 
@@ -32,6 +32,8 @@ Module.register("MMM-QRCode", {
 
 	start() {
 		this.config = { ...this.defaults, ...this.config };
+		this.config.colorDark = "#000";
+		this.config.colorLight = "#fff";
 		this.qrText = this.config.text;
 		Log.log(`Starting module: ${this.name}`);
 
@@ -68,6 +70,8 @@ Module.register("MMM-QRCode", {
 		wrapperEl.classList.add("qrcode");
 
 		const qrcodeEl = document.createElement("canvas");
+		qrcodeEl.style.backgroundColor = "#fff";
+		qrcodeEl.style.display = "block";
 
 		const options = {
 			width: this.config.imageSize,
